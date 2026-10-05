@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dr Pulkit Mandal | Health Content Portfolio</title>
+<meta name="description" content="Consumer health writing samples demonstrating plain-English medical communication, evidence appraisal and safety-netting.">
+<meta name="author" content="Dr Pulkit Mandal">
+<style>
+:root{
+  --bg:#f7f9fc; --surface:#ffffff; --ink:#14233a; --muted:#52627a; --line:#dbe3ee;
+  --brand:#0a4fa3; --brand-ink:#ffffff; --accent:#e8f1fc; --warn-bg:#fff4f3; --warn-line:#c6362c; --key-bg:#eef7f1; --key-line:#2f7d4f;
+  --radius:14px; --max:1080px; --read:720px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1522; --surface:#152033; --ink:#e8eef8; --muted:#a6b4c9; --line:#273650;
+    --brand:#7db3ff; --brand-ink:#0b1a2e; --accent:#162a47; --warn-bg:#2a1a1b; --warn-line:#ff7a70; --key-bg:#12281d; --key-line:#5fcf8a;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--brand);color:var(--brand-ink);padding:.6rem 1rem;z-index:99}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+header.site{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-.01em}
+.brand span{color:var(--brand)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem;font-weight:500}
+nav a:hover,nav a[aria-current]{color:var(--brand)}
+.hero{padding:72px 0 48px}
+.eyebrow{display:inline-block;background:var(--accent);color:var(--brand);font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;padding:.35rem .8rem;border-radius:99px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;margin:18px 0 16px;letter-spacing:-.02em;max-width:18ch}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:60ch;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.2rem;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--brand)}
+.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.btn.ghost{color:var(--brand);background:transparent}
+section{padding:44px 0}
+section h2{font-size:1.7rem;letter-spacing:-.01em;margin:0 0 8px}
+section .sub{color:var(--muted);margin:0 0 26px;max-width:62ch}
+.grid{display:grid;gap:18px}
+.grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card h3{margin:.2rem 0 .4rem;font-size:1.15rem;line-height:1.3}
+.card p{margin:.3rem 0 .8rem;color:var(--muted);font-size:.97rem}
+.tag{font-size:.78rem;font-weight:600;color:var(--brand);text-transform:uppercase;letter-spacing:.05em}
+.meta{font-size:.85rem;color:var(--muted)}
+.card a.more{font-weight:600;text-decoration:none}
+.card a.more:hover{text-decoration:underline}
+.sample-card{display:flex;flex-direction:column}
+.sample-card .more{margin-top:auto}
+.skills dt{font-weight:700;margin-top:6px}
+.skills dd{margin:0 0 6px;color:var(--muted);font-size:.96rem}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:700;margin-bottom:8px}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.94rem}
+.about{display:grid;gap:28px;grid-template-columns:1.4fr 1fr}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+.facts{list-style:none;padding:0;margin:0}
+.facts li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.97rem}
+.facts li:last-child{border:0}
+.notice{background:var(--accent);border-radius:var(--radius);padding:14px 18px;font-size:.92rem;color:var(--muted)}
+footer.site{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:.9rem;margin-top:30px}
+
+/* article pages */
+.article-head{padding:48px 0 18px}
+.crumbs{font-size:.9rem;margin-bottom:14px}
+.article-head h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.02em;margin:10px 0 12px;max-width:24ch}
+.article-head .deck{font-size:1.1rem;color:var(--muted);max-width:60ch}
+.layout{display:grid;grid-template-columns:240px minmax(0,var(--read));gap:48px;align-items:start;padding-bottom:30px}
+@media(max-width:960px){.layout{grid-template-columns:1fr}.toc{position:static!important}}
+.toc{position:sticky;top:86px;font-size:.9rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.toc h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 8px}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc li{margin:5px 0}
+.toc a{text-decoration:none;color:var(--ink)}
+.toc a:hover{color:var(--brand)}
+article.body h2{font-size:1.5rem;margin:2.2rem 0 .5rem;letter-spacing:-.01em;scroll-margin-top:90px}
+article.body h3{font-size:1.15rem;margin:1.5rem 0 .3rem}
+article.body p{margin:.7rem 0}
+article.body ul,article.body ol{padding-left:1.3rem}
+article.body li{margin:.3rem 0}
+article.body table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.97rem;background:var(--surface)}
+article.body th,article.body td{border:1px solid var(--line);padding:.6rem .8rem;text-align:left}
+article.body th{background:var(--accent)}
+.callout-urgent{background:var(--warn-bg);border-left:5px solid var(--warn-line);border-radius:8px;padding:14px 18px;margin:1.2rem 0}
+.callout-urgent p{margin:.2rem 0}
+.keypoints{background:var(--key-bg);border-left:5px solid var(--key-line);border-radius:8px;padding:6px 20px 12px;margin:2rem 0}
+.keypoints h2{margin-top:1rem!important}
+.sources{border-top:1px solid var(--line);margin-top:2rem;padding-top:.5rem;font-size:.95rem}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;margin-top:28px}
+@media print{
+  header.site,.toc,.pager,footer.site,.skip{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .layout{display:block}
+}
+
+.article-section{border-top:1px solid rgba(127,127,127,.3);margin-top:3rem;padding-top:1rem}
+[id]{scroll-margin-top:80px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site"><div class="wrap">
+  <a class="brand" href="#main">Dr Pulkit <span>Mandal</span></a>
+  <nav aria-label="Main"><ul>
+    <li><a href="#samples">Writing samples</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul></nav>
+</div></header>
+<main id="main">
+<div class="wrap">
+<section class="hero">
+  <span class="eyebrow">Health content portfolio</span>
+  <h1>Clear, evidence-led health writing for real readers</h1>
+  <p class="lead">Three consumer health articles showing how complex medical evidence can be turned into accurate, accessible, plain-English content, with safety-netting and sources built in. Written by Dr Pulkit Mandal, a medical doctor and MSc Sports and Exercise Medicine student.</p>
+  <div class="btns">
+    <a class="btn primary" href="#samples">Read the samples</a>
+    <a class="btn ghost" href="#contact">Get in touch</a>
+  </div>
+</section>
+
+<section id="samples" aria-labelledby="h-samples">
+  <h2 id="h-samples">Writing samples</h2>
+  <p class="sub">A condition article, a lifestyle and prevention article, and a medicines explainer, each written for a general UK audience.</p>
+  <div class="grid cols-3">
+<article class="card sample-card">
+  <span class="tag">Consumer health condition article</span>
+  <h3>High blood pressure: what your numbers mean and what you can do about it</h3>
+  <p>A plain-English condition article explaining blood pressure numbers, risk, self-monitoring and when to seek urgent help.</p>
+  <p class="meta">Plain English &middot; Health literacy &middot; Safety-netting<br>About 6 min read</p>
+  <a class="more" href="#high-blood-pressure" aria-label="Read sample: High blood pressure: what your numbers mean and what you can do about it">Read the sample &rarr;</a>
+</article>
+<article class="card sample-card">
+  <span class="tag">Lifestyle and prevention article</span>
+  <h3>How much exercise do you really need each week?</h3>
+  <p>A behaviour-focused prevention article that turns national activity guidance into realistic, achievable weekly choices.</p>
+  <p class="meta">Behaviour change &middot; Accessible structure &middot; Guideline translation<br>About 5 min read</p>
+  <a class="more" href="#how-much-exercise" aria-label="Read sample: How much exercise do you really need each week?">Read the sample &rarr;</a>
+</article>
+<article class="card sample-card">
+  <span class="tag">Medicines explainer</span>
+  <h3>Semaglutide for weight loss: how it works and what to consider</h3>
+  <p>A medicines explainer balancing benefits, side effects, eligibility and uncertainty, with questions to ask a prescriber.</p>
+  <p class="meta">Evidence appraisal &middot; Risk communication &middot; Medicines safety<br>About 6 min read</p>
+  <a class="more" href="#semaglutide-weight-loss" aria-label="Read sample: Semaglutide for weight loss: how it works and what to consider">Read the sample &rarr;</a>
+</article>
+  </div>
+</section>
+
+<section id="skills" aria-labelledby="h-skills">
+  <h2 id="h-skills">What the samples demonstrate</h2>
+  <p class="sub">The skills a health content editor uses every day, shown in the work itself.</p>
+  <div class="card"><dl class="skills"><dt>Critical appraisal and hierarchy of evidence</dt><dd>Each sample is built from named UK guidance (NHS, NICE, UK Chief Medical Officers). Trial results are described as population averages, not promises to an individual.</dd><dt>Plain English and health literacy</dt><dd>Short sentences, defined terms and everyday examples. Numbers such as 140/90 mmHg or 150 minutes are explained, not just stated.</dd><dt>User-centred structure</dt><dd>Question-style headings, a contents list, key points at the end, practical checklists and a worked weekly plan so readers can find what they need.</dd><dt>Accessibility</dt><dd>Semantic headings, descriptive link text, real lists and tables, no content locked in images, and sensible contrast. This site follows the same rules.</dd><dt>Safety-netting and risk communication</dt><dd>Every article says clearly when to seek urgent help, avoids overstating benefit, and tells readers not to stop prescribed medicines on their own.</dd><dt>Content lifecycle</dt><dd>Each piece lists its sources, shows a last-reviewed date and carries a medical information notice, ready for scheduled review.</dd></dl></div>
+</section>
+
+<section id="approach" aria-labelledby="h-approach">
+  <h2 id="h-approach">How I approach health content</h2>
+  <p class="sub">A repeatable process from brief to review, designed to fit into clinician sign-off and content lifecycle workflows.</p>
+  <ol class="steps"><li><b>Brief</b><span>Clarify the audience, the question they are asking and what action they should take.</span></li><li><b>Appraise</b><span>Find the strongest current guidance and check each claim against it.</span></li><li><b>Write</b><span>Draft in plain English with clear structure, then simplify.</span></li><li><b>Clinical check</b><span>Route to an expert clinician for feedback and sign-off.</span></li><li><b>Review</b><span>Record sources and a review date so the content can be kept current.</span></li></ol>
+</section>
+
+<section id="about" aria-labelledby="h-about">
+  <h2 id="h-about">About</h2>
+  <div class="about">
+    <div>
+      <p>I am a GMC-recognised medical doctor (MD, O.O. Bogomolets National Medical University) completing an MSc in Sports and Exercise Medicine at Manchester Metropolitan University. My MSc dissertation is a PROSPERO-registered systematic review, which gave me hands-on practice of searching, appraising and weighing evidence.</p>
+      <p>I have written health content as a part-time Medical Writer since 2023, and I completed a 13-month hospital internship across 16 specialties, where explaining diagnoses and plans clearly to patients and families was part of every day. I enjoy turning guidelines and trial data into content that people can understand and act on.</p>
+      <p class="notice">These articles are independent writing samples prepared for a portfolio. They are not published or endorsed by any employer and are not a substitute for medical advice.</p>
+    </div>
+    <ul class="facts card" aria-label="Quick facts">
+      <li><b>Qualification:</b> MD; PLAB 1 and PLAB 2 passed</li>
+      <li><b>Studying:</b> MSc Sports and Exercise Medicine, Manchester Metropolitan University</li>
+      <li><b>Experience:</b> Medical Writer (part-time, since 2023); hospital internship; clinic coordination</li>
+      <li><b>Research:</b> PROSPERO-registered systematic review; peer-reviewed lead-author publication (2020)</li>
+      <li><b>Based in:</b> Manchester, UK</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="h-contact">
+  <h2 id="h-contact">Contact</h2>
+  <p class="sub">Happy to discuss these samples or how I could contribute to a health content team.</p>
+  <div class="btns">
+    <a class="btn primary" href="mailto:ubipulkit@gmail.com">Email me</a>
+    <a class="btn ghost" rel="noopener" href="https://www.linkedin.com/in/dr-pulkit-mandal-b4a585284">LinkedIn</a>
+    <a class="btn ghost" rel="noopener" href="https://ubipulkit-web.github.io/MedWriting/">Full medical writing portfolio</a>
+  </div>
+</section>
+<section class="article-section" id="high-blood-pressure">
+
+<div class="article-head">
+  <div class="crumbs"><a href="#samples">&larr; Writing samples</a></div>
+  <span class="eyebrow">Consumer health condition article</span>
+  <h1>High blood pressure: what your numbers mean and what you can do about it</h1>
+  <p class="deck">Plain-English medical communication</p>
+  <p class="meta">Sample article &middot; About 6 min read &middot; By Dr Pulkit Mandal</p>
+</div>
+<div class="layout">
+  <aside class="toc" aria-label="On this page"><h2>On this page</h2><ul><li><a href="#high-blood-pressure--what-is-blood-pressure">What is blood pressure?</a></li><li><a href="#high-blood-pressure--what-counts-as-high-blood-pressure">What counts as high blood pressure?</a></li><li><a href="#high-blood-pressure--does-high-blood-pressure-cause-symptoms">Does high blood pressure cause symptoms?</a></li><li><a href="#high-blood-pressure--why-does-high-blood-pressure-matter">Why does high blood pressure matter?</a></li><li><a href="#high-blood-pressure--who-is-more-likely-to-develop-high-blood-pressure">Who is more likely to develop high blood pressure?</a></li><li><a href="#high-blood-pressure--how-can-i-lower-my-blood-pressure">How can I lower my blood pressure?</a></li><li><a href="#high-blood-pressure--will-i-need-medicine">Will I need medicine?</a></li><li><a href="#high-blood-pressure--can-i-check-my-blood-pressure-at-home">Can I check my blood pressure at home?</a></li><li><a href="#high-blood-pressure--when-should-i-seek-urgent-medical-help">When should I seek urgent medical help?</a></li><li><a href="#high-blood-pressure--key-points">Key points</a></li></ul></aside>
+  <article class="body">
+<p>High blood pressure is common, and most people who have it do not feel unwell. But over time, it can put extra strain on your heart, blood vessels and other organs.</p>
+<p>The good news is that high blood pressure can usually be managed. Lifestyle changes, regular monitoring and medicines when needed can all help reduce your risk of future health problems.</p>
+<h2 id="high-blood-pressure--what-is-blood-pressure">What is blood pressure?</h2>
+<p>Blood pressure is the force of blood pushing against the walls of your arteries as your heart pumps it around your body.</p>
+<p>A blood pressure reading contains two numbers, for example 130/80 mmHg.</p>
+<p>The first number is your systolic blood pressure. This is the pressure when your heart contracts and pumps blood.</p>
+<p>The second number is your diastolic blood pressure. This is the pressure when your heart relaxes between beats.</p>
+<h2 id="high-blood-pressure--what-counts-as-high-blood-pressure">What counts as high blood pressure?</h2>
+<p>Blood pressure can vary during the day, so one raised reading does not always mean that you have high blood pressure.</p>
+<p>In the UK, blood pressure is usually considered high if it is:</p>
+<ul>
+<li>
+<p>140/90 mmHg or higher when measured by a healthcare professional</p>
+</li>
+<li>
+<p>135/85 mmHg or higher when measured at home</p>
+</li>
+</ul>
+<p>If your reading is high, you may be asked to take several readings at home or wear a monitor for 24 hours. This helps your healthcare professional work out whether your blood pressure is consistently raised.</p>
+<h2 id="high-blood-pressure--does-high-blood-pressure-cause-symptoms">Does high blood pressure cause symptoms?</h2>
+<p>Usually, it does not.</p>
+<p>This is why high blood pressure is sometimes described as a "silent" condition. You can feel completely well while your blood pressure remains higher than it should be.</p>
+<p>Rarely, people may experience symptoms such as:</p>
+<ul>
+<li>
+<p>headaches</p>
+</li>
+<li>
+<p>blurred vision</p>
+</li>
+<li>
+<p>chest discomfort</p>
+</li>
+</ul>
+<p>These symptoms can have many causes, so they cannot be used to diagnose high blood pressure.</p>
+<p>The only reliable way to know your blood pressure is to have it measured.</p>
+<h2 id="high-blood-pressure--why-does-high-blood-pressure-matter">Why does high blood pressure matter?</h2>
+<p>If your blood pressure stays high for a long time, it can damage blood vessels and increase the workload on your heart.</p>
+<p>This can increase your risk of conditions including:</p>
+<ul>
+<li>
+<p>heart disease</p>
+</li>
+<li>
+<p>heart attack</p>
+</li>
+<li>
+<p>stroke</p>
+</li>
+<li>
+<p>heart failure</p>
+</li>
+<li>
+<p>kidney disease</p>
+</li>
+<li>
+<p>some types of vascular dementia</p>
+</li>
+</ul>
+<p>Your overall risk depends on more than your blood pressure alone. Healthcare professionals may also consider factors such as your age, cholesterol levels, smoking status, family history and whether you have other conditions such as diabetes.</p>
+<p>Even a modest reduction in blood pressure can be beneficial.</p>
+<h2 id="high-blood-pressure--who-is-more-likely-to-develop-high-blood-pressure">Who is more likely to develop high blood pressure?</h2>
+<p>Your chances of developing high blood pressure generally increase as you get older.</p>
+<p>Other factors that can increase your risk include:</p>
+<ul>
+<li>
+<p>having a family history of high blood pressure</p>
+</li>
+<li>
+<p>eating a diet high in salt</p>
+</li>
+<li>
+<p>being overweight or living with obesity</p>
+</li>
+<li>
+<p>smoking</p>
+</li>
+<li>
+<p>drinking too much alcohol</p>
+</li>
+<li>
+<p>being physically inactive</p>
+</li>
+<li>
+<p>experiencing long-term stress</p>
+</li>
+</ul>
+<p>People from some ethnic backgrounds, including Black African, Black Caribbean and South Asian backgrounds, may also have a higher risk.</p>
+<p>Some medical conditions and medicines can contribute to high blood pressure too.</p>
+<h2 id="high-blood-pressure--how-can-i-lower-my-blood-pressure">How can I lower my blood pressure?</h2>
+<h3 id="high-blood-pressure--eat-less-salt">Eat less salt</h3>
+<p>Eating too much salt can increase blood pressure. Try to reduce foods that are high in salt and avoid automatically adding salt at the table. Remember that much of the salt we eat is already contained in packaged and processed foods rather than being added during cooking. Checking food labels can help you compare products.</p>
+<h3 id="high-blood-pressure--be-physically-active">Be physically active</h3>
+<p>Regular activity can help lower blood pressure and support your heart and overall health. Adults should generally aim for at least 150 minutes of moderate-intensity activity each week, or around 75 minutes of vigorous activity. You do not need to complete this all at once. Walking, cycling, swimming and many other activities can count. If you have a medical condition or have not exercised for a long time, speak to a healthcare professional if you are unsure what level of activity is suitable for you.</p>
+<h3 id="high-blood-pressure--maintain-a-healthy-weight">Maintain a healthy weight</h3>
+<p>If you are overweight, losing even some weight may help improve your blood pressure and reduce your risk of other health conditions. Try to focus on changes you can maintain rather than short-term diets.</p>
+<h3 id="high-blood-pressure--limit-alcohol">Limit alcohol</h3>
+<p>Regularly drinking more than the recommended limits can raise your blood pressure. Men and women are advised not to regularly drink more than 14 units of alcohol a week. If you drink 14 units, spreading them across several days is preferable to drinking them all at once.</p>
+<h3 id="high-blood-pressure--stop-smoking">Stop smoking</h3>
+<p>Smoking does not directly cause every case of high blood pressure, but it significantly increases your risk of heart attack, stroke and other cardiovascular disease. Stopping smoking is one of the most effective things you can do for your long-term health.</p>
+<h2 id="high-blood-pressure--will-i-need-medicine">Will I need medicine?</h2>
+<p>Not everyone with high blood pressure needs medication straight away.</p>
+<p>Your healthcare professional may recommend medicine if:</p>
+<ul>
+<li>
+<p>your blood pressure is very high</p>
+</li>
+<li>
+<p>lifestyle changes have not lowered it enough</p>
+</li>
+<li>
+<p>you have a higher risk of heart attack or stroke</p>
+</li>
+<li>
+<p>you have another health condition that increases your cardiovascular risk</p>
+</li>
+</ul>
+<p>There are several types of blood pressure medicine. Which medicine is suitable for you depends on factors such as your age, other medical conditions and how high your blood pressure is. Some people need more than one medicine.</p>
+<p>Do not stop prescribed blood pressure medication without speaking to your doctor, even if your readings improve.</p>
+<h2 id="high-blood-pressure--can-i-check-my-blood-pressure-at-home">Can I check my blood pressure at home?</h2>
+<p>Yes. Home monitoring can be useful because it gives several readings over time rather than relying on a single measurement.</p>
+<p>For a more accurate reading:</p>
+<ul>
+<li>
+<p>sit quietly for several minutes before measuring</p>
+</li>
+<li>
+<p>sit with your back supported</p>
+</li>
+<li>
+<p>keep your feet flat on the floor</p>
+</li>
+<li>
+<p>support your arm</p>
+</li>
+<li>
+<p>avoid talking while the reading is being taken</p>
+</li>
+<li>
+<p>follow the instructions supplied with your monitor</p>
+</li>
+</ul>
+<p>Try to take readings under similar conditions each time. Your healthcare professional can tell you how often they want you to check your blood pressure.</p>
+<h2 id="high-blood-pressure--when-should-i-seek-urgent-medical-help">When should I seek urgent medical help?</h2>
+<p>High blood pressure itself usually does not cause an emergency. However, symptoms such as severe or persistent chest pain, severe shortness of breath, collapse or symptoms of a stroke need urgent assessment.</p>
+<div class="callout-urgent" role="note"><p><strong>Call 999 if you have severe chest pain that does not go away, particularly if it spreads to your arm, neck, jaw, back or stomach, or is accompanied by sweating, nausea, breathlessness or feeling light-headed.</strong></p></div>
+<p>You should also call 999 if someone develops sudden facial weakness, weakness in an arm or difficulty speaking.</p>
+<div class="keypoints"><h2 id="high-blood-pressure--key-points">Key points</h2>
+<ul>
+<li>
+<p>High blood pressure usually causes no symptoms, so checking it is important.</p>
+</li>
+<li>
+<p>A reading of 140/90 mmHg or above in a healthcare setting, or 135/85 mmHg or above at home, is generally considered high.</p>
+</li>
+<li>
+<p>Lifestyle changes can make a real difference, although some people also need medication.</p>
+</li>
+<li>
+<p>Managing your blood pressure reduces your risk of serious conditions such as heart attack and stroke.</p>
+</li>
+</ul>
+</div><div class="sources"><h2 id="high-blood-pressure--sources">Sources</h2>
+<p><a rel="noopener" href="https://www.nhs.uk/conditions/high-blood-pressure-hypertension/"><u>NHS – High blood pressure</u></a></p>
+<p><a rel="noopener" href="https://www.nhs.uk/conditions/blood-pressure-test/"><u>NHS – Blood pressure test</u></a></p>
+<p><a rel="noopener" href="https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/"><u>NHS – Physical activity guidelines for adults aged 19 to 64</u></a></p>
+<p>Last reviewed: October 2026</p>
+<p><strong>Medical information notice:</strong> This article provides general health information and is not a substitute for individual medical advice.</p></div>
+<nav class="pager" aria-label="More samples"><a href="#samples">&larr; All samples</a><a href="#how-much-exercise">How much exercise? &rarr;</a></nav>
+  </article>
+</div>
+
+</section>
+<section class="article-section" id="how-much-exercise">
+
+<div class="article-head">
+  <div class="crumbs"><a href="#samples">&larr; Writing samples</a></div>
+  <span class="eyebrow">Lifestyle and prevention article</span>
+  <h1>How much exercise do you really need each week?</h1>
+  <p class="deck">Behaviour-focused health communication</p>
+  <p class="meta">Sample article &middot; About 5 min read &middot; By Dr Pulkit Mandal</p>
+</div>
+<div class="layout">
+  <aside class="toc" aria-label="On this page"><h2>On this page</h2><ul><li><a href="#how-much-exercise--how-much-physical-activity-should-adults-do">How much physical activity should adults do?</a></li><li><a href="#how-much-exercise--what-counts-as-moderate-exercise">What counts as moderate exercise?</a></li><li><a href="#how-much-exercise--what-is-vigorous-exercise">What is vigorous exercise?</a></li><li><a href="#how-much-exercise--does-walking-count-as-exercise">Does walking count as exercise?</a></li><li><a href="#how-much-exercise--do-i-need-to-exercise-for-30-minutes-at-a-time">Do I need to exercise for 30 minutes at a time?</a></li><li><a href="#how-much-exercise--why-is-strength-training-important">Why is strength training important?</a></li><li><a href="#how-much-exercise--what-if-i-sit-down-for-most-of-the-working-day">What if I sit down for most of the working day?</a></li><li><a href="#how-much-exercise--what-are-the-benefits-of-regular-exercise">What are the benefits of regular exercise?</a></li><li><a href="#how-much-exercise--im-inactive-where-should-i-start">I&#x27;m inactive. Where should I start?</a></li><li><a href="#how-much-exercise--what-if-i-have-a-medical-condition">What if I have a medical condition?</a></li><li><a href="#how-much-exercise--when-should-i-stop-exercising">When should I stop exercising?</a></li><li><a href="#how-much-exercise--a-realistic-week-of-activity">A realistic week of activity</a></li><li><a href="#how-much-exercise--key-points">Key points</a></li></ul></aside>
+  <article class="body">
+<p>You probably know that exercise is good for you. But knowing exactly how much you should do can be less straightforward.</p>
+<p>Do you need to exercise every day? Does walking count? And what if you cannot fit a 30-minute workout into your schedule?</p>
+<p>The good news is that being active does not have to mean spending hours in the gym.</p>
+<h2 id="how-much-exercise--how-much-physical-activity-should-adults-do">How much physical activity should adults do?</h2>
+<p>UK guidance recommends that adults aged 19 to 64 aim for at least:</p>
+<ul>
+<li>
+<p>150 minutes of moderate-intensity activity each week, or</p>
+</li>
+<li>
+<p>75 minutes of vigorous-intensity activity each week</p>
+</li>
+</ul>
+<p>You can also combine moderate and vigorous activity.</p>
+<p>Adults should also do activities that strengthen the major muscle groups on at least 2 days each week.</p>
+<p>It is also important to reduce the amount of time you spend sitting down and to break up long periods of inactivity.</p>
+<h2 id="how-much-exercise--what-counts-as-moderate-exercise">What counts as moderate exercise?</h2>
+<p>Moderate-intensity activity makes your heart beat faster and your breathing become quicker.</p>
+<p>A useful guide is the talk test. During moderate exercise, you should usually still be able to talk, but you may find it difficult to sing a song.</p>
+<p>Examples may include:</p>
+<ul>
+<li>
+<p>brisk walking</p>
+</li>
+<li>
+<p>cycling at a comfortable pace</p>
+</li>
+<li>
+<p>dancing</p>
+</li>
+<li>
+<p>doubles tennis</p>
+</li>
+<li>
+<p>some forms of swimming</p>
+</li>
+<li>
+<p>active gardening</p>
+</li>
+</ul>
+<p>How hard an activity feels depends on your fitness level. A brisk walk for one person may feel relatively easy to another.</p>
+<h2 id="how-much-exercise--what-is-vigorous-exercise">What is vigorous exercise?</h2>
+<p>Vigorous activity requires more effort. Your breathing becomes harder and faster, and you are unlikely to be able to say more than a few words without pausing for breath.</p>
+<p>Examples can include:</p>
+<ul>
+<li>
+<p>running</p>
+</li>
+<li>
+<p>swimming quickly</p>
+</li>
+<li>
+<p>cycling fast or uphill</p>
+</li>
+<li>
+<p>football</p>
+</li>
+<li>
+<p>aerobics</p>
+</li>
+<li>
+<p>skipping</p>
+</li>
+<li>
+<p>some martial arts</p>
+</li>
+</ul>
+<p>As a general guide, 75 minutes of vigorous exercise can provide similar health benefits to 150 minutes of moderate activity.</p>
+<p>You do not have to choose one or the other. Many people use a combination.</p>
+<h2 id="how-much-exercise--does-walking-count-as-exercise">Does walking count as exercise?</h2>
+<p>Yes. Walking can count towards your weekly physical activity, particularly when you walk briskly enough to increase your breathing and heart rate.</p>
+<p>It can also be one of the easiest ways to become more active because it does not require specialist equipment or a gym membership.</p>
+<p>You could try:</p>
+<ul>
+<li>
+<p>walking part of your commute</p>
+</li>
+<li>
+<p>taking a lunchtime walk</p>
+</li>
+<li>
+<p>getting off public transport one stop early</p>
+</li>
+<li>
+<p>walking while making a phone call</p>
+</li>
+<li>
+<p>taking the stairs when practical</p>
+</li>
+</ul>
+<p>If you currently do very little activity, walking can be a useful place to start.</p>
+<h2 id="how-much-exercise--do-i-need-to-exercise-for-30-minutes-at-a-time">Do I need to exercise for 30 minutes at a time?</h2>
+<p>No. You can accumulate activity across the week.</p>
+<p>For example, three 10-minute brisk walks spread through your day still contribute towards your overall activity.</p>
+<p>This can make exercise more achievable if work, caring responsibilities or other commitments make longer sessions difficult.</p>
+<p>The bigger goal is to move more consistently.</p>
+<h2 id="how-much-exercise--why-is-strength-training-important">Why is strength training important?</h2>
+<p>Aerobic exercise such as walking or running gets a lot of attention, but strengthening activity is also important.</p>
+<p>Strength exercises help maintain:</p>
+<ul>
+<li>
+<p>muscle strength</p>
+</li>
+<li>
+<p>bone health</p>
+</li>
+<li>
+<p>balance</p>
+</li>
+<li>
+<p>physical function</p>
+</li>
+</ul>
+<p>Strengthening activities can include:</p>
+<ul>
+<li>
+<p>lifting weights</p>
+</li>
+<li>
+<p>using resistance bands</p>
+</li>
+<li>
+<p>bodyweight exercises</p>
+</li>
+<li>
+<p>yoga</p>
+</li>
+<li>
+<p>Pilates</p>
+</li>
+<li>
+<p>carrying heavy shopping</p>
+</li>
+<li>
+<p>some types of gardening</p>
+</li>
+</ul>
+<p>You do not necessarily need gym equipment. The aim is to make your muscles work harder than they normally do.</p>
+<h2 id="how-much-exercise--what-if-i-sit-down-for-most-of-the-working-day">What if I sit down for most of the working day?</h2>
+<p>Regular exercise is beneficial, but sitting for long periods is still worth addressing.</p>
+<p>Try to break up long periods of sitting with movement where possible.</p>
+<ul>
+<li>
+<p>stand up when taking some phone calls</p>
+</li>
+<li>
+<p>walk to speak to a colleague rather than messaging</p>
+</li>
+<li>
+<p>take brief movement breaks</p>
+</li>
+<li>
+<p>use stairs where practical</p>
+</li>
+<li>
+<p>go for a short walk during lunch</p>
+</li>
+<li>
+<p>alternate between sitting and standing if your workspace allows</p>
+</li>
+</ul>
+<h2 id="how-much-exercise--what-are-the-benefits-of-regular-exercise">What are the benefits of regular exercise?</h2>
+<p>Regular physical activity can benefit both physical and mental health.</p>
+<p>It can help:</p>
+<ul>
+<li>
+<p>improve cardiovascular fitness</p>
+</li>
+<li>
+<p>strengthen muscles and bones</p>
+</li>
+<li>
+<p>support a healthy body weight</p>
+</li>
+<li>
+<p>improve sleep</p>
+</li>
+<li>
+<p>reduce the risk of several long-term conditions</p>
+</li>
+<li>
+<p>improve mood and wellbeing</p>
+</li>
+</ul>
+<p>Importantly, some activity is better than none. You do not need to reach the full recommended amount immediately to start benefiting.</p>
+<h2 id="how-much-exercise--im-inactive-where-should-i-start">I'm inactive. Where should I start?</h2>
+<p>Starting too aggressively can make exercise uncomfortable and difficult to maintain.</p>
+<p>A more sustainable approach is to begin with an amount that feels manageable.</p>
+<p>For example, you might start with a 10- to 15-minute walk several times a week and gradually increase the length or pace.</p>
+<p>Choose activities you actually enjoy. Exercise does not need to look like a traditional workout. Dancing, walking, gardening, recreational sport and active travel can all contribute.</p>
+<h2 id="how-much-exercise--what-if-i-have-a-medical-condition">What if I have a medical condition?</h2>
+<p>Having a long-term condition does not automatically mean that you should avoid physical activity.</p>
+<p>In many cases, exercise forms an important part of treatment and prevention.</p>
+<p>However, the type and intensity of exercise that is appropriate can depend on your condition.</p>
+<p>Speak to your GP or another healthcare professional before significantly increasing your activity if:</p>
+<ul>
+<li>
+<p>you have a known medical condition and are unsure what exercise is safe</p>
+</li>
+<li>
+<p>you have not exercised for a long time</p>
+</li>
+<li>
+<p>you are recovering from surgery or serious illness</p>
+</li>
+<li>
+<p>you experience symptoms when exercising</p>
+</li>
+</ul>
+<h2 id="how-much-exercise--when-should-i-stop-exercising">When should I stop exercising?</h2>
+<p>Stop exercising and seek medical advice if you develop concerning symptoms such as:</p>
+<ul>
+<li>
+<p>chest pain</p>
+</li>
+<li>
+<p>unexplained severe breathlessness</p>
+</li>
+<li>
+<p>fainting</p>
+</li>
+<li>
+<p>severe dizziness</p>
+</li>
+<li>
+<p>new or unusual palpitations</p>
+</li>
+</ul>
+<div class="callout-urgent" role="note"><p><strong>Call 999 if you develop severe or persistent chest pain, collapse or severe breathing difficulty.</strong></p></div>
+<h2 id="how-much-exercise--a-realistic-week-of-activity">A realistic week of activity</h2>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Example activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monday</td>
+<td>30-minute brisk walk</td>
+</tr>
+<tr>
+<td>Tuesday</td>
+<td>20 minutes of strength exercises</td>
+</tr>
+<tr>
+<td>Wednesday</td>
+<td>30-minute cycle</td>
+</tr>
+<tr>
+<td>Thursday</td>
+<td>30-minute brisk walk</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>Rest or gentle activity</td>
+</tr>
+<tr>
+<td>Saturday</td>
+<td>60-minute walk, swim or recreational sport</td>
+</tr>
+<tr>
+<td>Sunday</td>
+<td>Strength exercises</td>
+</tr>
+</tbody>
+</table>
+<p>That would provide at least 150 minutes of moderate aerobic activity alongside two strength sessions.</p>
+<p>Your week may look completely different. The best routine is one that is appropriate for you and that you can maintain.</p>
+<div class="keypoints"><h2 id="how-much-exercise--key-points">Key points</h2>
+<ul>
+<li>
+<p>Adults should aim for at least 150 minutes of moderate activity or 75 minutes of vigorous activity each week.</p>
+</li>
+<li>
+<p>Strengthening activities should be included on at least 2 days each week.</p>
+</li>
+<li>
+<p>You can divide activity into smaller sessions.</p>
+</li>
+<li>
+<p>Walking counts when it is brisk enough to raise your breathing and heart rate.</p>
+</li>
+<li>
+<p>If you are currently inactive, start gradually rather than trying to change everything at once.</p>
+</li>
+</ul>
+</div><div class="sources"><h2 id="how-much-exercise--sources">Sources</h2>
+<p><a rel="noopener" href="https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/"><u>NHS – Physical activity guidelines for adults aged 19 to 64</u></a></p>
+<p><a rel="noopener" href="https://www.gov.uk/government/publications/physical-activity-guidelines-uk-chief-medical-officers-report"><u>UK Chief Medical Officers – Physical activity guidelines</u></a></p>
+<p>Last reviewed: October 2026</p>
+<p><strong>Medical information notice:</strong> This article provides general information. If you have a medical condition or concerns about exercising, speak to an appropriate healthcare professional.</p></div>
+<nav class="pager" aria-label="More samples"><a href="#high-blood-pressure">&larr; High blood pressure</a><a href="#semaglutide-weight-loss">Semaglutide for weight loss &rarr;</a></nav>
+  </article>
+</div>
+
+</section>
+<section class="article-section" id="semaglutide-weight-loss">
+
+<div class="article-head">
+  <div class="crumbs"><a href="#samples">&larr; Writing samples</a></div>
+  <span class="eyebrow">Medicines explainer</span>
+  <h1>Semaglutide for weight loss: how it works and what to consider</h1>
+  <p class="deck">Evidence, benefits and risk communication</p>
+  <p class="meta">Sample article &middot; About 6 min read &middot; By Dr Pulkit Mandal</p>
+</div>
+<div class="layout">
+  <aside class="toc" aria-label="On this page"><h2>On this page</h2><ul><li><a href="#semaglutide-weight-loss--what-is-semaglutide">What is semaglutide?</a></li><li><a href="#semaglutide-weight-loss--is-wegovy-the-same-as-ozempic">Is Wegovy the same as Ozempic?</a></li><li><a href="#semaglutide-weight-loss--who-may-be-offered-semaglutide-for-weight-management">Who may be offered semaglutide for weight management?</a></li><li><a href="#semaglutide-weight-loss--how-is-semaglutide-taken">How is semaglutide taken?</a></li><li><a href="#semaglutide-weight-loss--how-much-weight-can-i-expect-to-lose">How much weight can I expect to lose?</a></li><li><a href="#semaglutide-weight-loss--does-semaglutide-replace-diet-and-exercise">Does semaglutide replace diet and exercise?</a></li><li><a href="#semaglutide-weight-loss--what-are-the-common-side-effects">What are the common side effects?</a></li><li><a href="#semaglutide-weight-loss--are-there-serious-risks">Are there serious risks?</a></li><li><a href="#semaglutide-weight-loss--can-i-take-semaglutide-during-pregnancy">Can I take semaglutide during pregnancy?</a></li><li><a href="#semaglutide-weight-loss--what-happens-if-i-stop-taking-it">What happens if I stop taking it?</a></li><li><a href="#semaglutide-weight-loss--does-semaglutide-have-benefits-beyond-weight-loss">Does semaglutide have benefits beyond weight loss?</a></li><li><a href="#semaglutide-weight-loss--what-should-i-ask-before-starting-treatment">What should I ask before starting treatment?</a></li><li><a href="#semaglutide-weight-loss--buying-weight-loss-injections-online">Buying weight-loss injections online</a></li><li><a href="#semaglutide-weight-loss--key-points">Key points</a></li></ul></aside>
+  <article class="body">
+<p>You may have heard of semaglutide through brand names such as Wegovy or Ozempic.</p>
+<p>Both contain semaglutide, but they are used for different purposes. Wegovy is licensed for weight management in appropriate people, while Ozempic is primarily used to treat type 2 diabetes.</p>
+<p>Semaglutide can help some people lose weight, but it is a prescription medicine rather than a quick solution. It should be used alongside changes to diet, physical activity and other aspects of weight management.</p>
+<h2 id="semaglutide-weight-loss--what-is-semaglutide">What is semaglutide?</h2>
+<p>Semaglutide belongs to a group of medicines called GLP-1 receptor agonists.</p>
+<p>GLP-1 is a hormone that your body naturally releases after eating.</p>
+<p>Semaglutide acts in a similar way and can:</p>
+<ul>
+<li>
+<p>reduce appetite</p>
+</li>
+<li>
+<p>help you feel full sooner</p>
+</li>
+<li>
+<p>help you stay full for longer</p>
+</li>
+<li>
+<p>slow the movement of food through your stomach</p>
+</li>
+</ul>
+<p>Together, these effects can reduce how much you feel like eating.</p>
+<p>For people with type 2 diabetes, semaglutide can also help regulate blood glucose.</p>
+<h2 id="semaglutide-weight-loss--is-wegovy-the-same-as-ozempic">Is Wegovy the same as Ozempic?</h2>
+<p>They contain the same active medicine — semaglutide — but they are not interchangeable products.</p>
+<p>Wegovy is licensed for weight management in certain people.</p>
+<p>Ozempic is used primarily to manage type 2 diabetes.</p>
+<p>The doses, licensing and reasons for prescribing them can differ.</p>
+<p>You should only use semaglutide that has been prescribed for you and according to the instructions provided by your healthcare professional.</p>
+<h2 id="semaglutide-weight-loss--who-may-be-offered-semaglutide-for-weight-management">Who may be offered semaglutide for weight management?</h2>
+<p>Semaglutide is not appropriate for everyone who wants to lose weight.</p>
+<p>NHS eligibility depends on clinical criteria and access through weight-management services.</p>
+<p>Healthcare professionals consider factors including:</p>
+<ul>
+<li>
+<p>your body mass index, or BMI</p>
+</li>
+<li>
+<p>health conditions related to your weight</p>
+</li>
+<li>
+<p>your previous attempts to manage weight</p>
+</li>
+<li>
+<p>whether treatment is clinically appropriate</p>
+</li>
+<li>
+<p>any conditions or medicines that could affect its safety</p>
+</li>
+</ul>
+<p>Different BMI thresholds may be used for people from some ethnic backgrounds because the risk of weight-related health problems can occur at lower BMI levels.</p>
+<p>Your eligibility should therefore be assessed individually rather than by comparing your weight with someone else's.</p>
+<h2 id="semaglutide-weight-loss--how-is-semaglutide-taken">How is semaglutide taken?</h2>
+<p>Wegovy is usually given as an injection once a week.</p>
+<p>Treatment normally starts at a low dose.</p>
+<p>The dose is then increased gradually according to the treatment schedule.</p>
+<p>This gradual increase helps your body adjust to the medicine and can reduce some side effects.</p>
+<p>Do not increase your dose faster than recommended.</p>
+<h2 id="semaglutide-weight-loss--how-much-weight-can-i-expect-to-lose">How much weight can I expect to lose?</h2>
+<p>There is no single amount that everyone will lose.</p>
+<p>Clinical trials show that semaglutide can produce meaningful weight loss in many people when combined with lifestyle support, but individual responses vary considerably.</p>
+<p>Your results can depend on factors including:</p>
+<ul>
+<li>
+<p>your starting weight</p>
+</li>
+<li>
+<p>the dose you can tolerate</p>
+</li>
+<li>
+<p>how long you remain on treatment</p>
+</li>
+<li>
+<p>eating patterns</p>
+</li>
+<li>
+<p>physical activity</p>
+</li>
+<li>
+<p>other health conditions and medicines</p>
+</li>
+<li>
+<p>your individual biological response</p>
+</li>
+</ul>
+<p>This is why percentages reported in clinical trials should not be interpreted as a guarantee of what will happen to an individual.</p>
+<p>A healthcare professional should review whether treatment is working for you.</p>
+<h2 id="semaglutide-weight-loss--does-semaglutide-replace-diet-and-exercise">Does semaglutide replace diet and exercise?</h2>
+<p>No.</p>
+<p>Weight-management medicines are intended to support broader treatment rather than replace it.</p>
+<p>NICE recommends that weight-management medicines are accompanied by support around nutrition, physical activity and behavioural strategies.</p>
+<p>That does not mean someone needs to follow an extreme diet or exercise programme.</p>
+<p>The aim is to develop changes that are realistic and sustainable alongside treatment.</p>
+<h2 id="semaglutide-weight-loss--what-are-the-common-side-effects">What are the common side effects?</h2>
+<p>Semaglutide commonly affects the digestive system.</p>
+<p>Side effects can include:</p>
+<ul>
+<li>
+<p>nausea</p>
+</li>
+<li>
+<p>vomiting</p>
+</li>
+<li>
+<p>diarrhoea</p>
+</li>
+<li>
+<p>constipation</p>
+</li>
+<li>
+<p>stomach discomfort</p>
+</li>
+</ul>
+<p>These effects are often more noticeable when treatment begins or when the dose is increased.</p>
+<p>Eating smaller meals and following the advice provided by your healthcare team may help.</p>
+<p>Speak to your prescriber if side effects are persistent, severe or difficult to manage.</p>
+<h2 id="semaglutide-weight-loss--are-there-serious-risks">Are there serious risks?</h2>
+<p>Like all medicines, semaglutide can cause less common but potentially serious problems.</p>
+<p>Seek medical advice urgently if you develop severe or persistent abdominal pain, particularly if it spreads to your back or is accompanied by vomiting.</p>
+<p>This could require assessment for conditions such as pancreatitis.</p>
+<p>Persistent vomiting or diarrhoea can also cause dehydration.</p>
+<p>Your prescriber should explain symptoms that need medical assessment and whether any of your existing medical conditions affect your suitability for treatment.</p>
+<h2 id="semaglutide-weight-loss--can-i-take-semaglutide-during-pregnancy">Can I take semaglutide during pregnancy?</h2>
+<p>Semaglutide is not recommended during pregnancy.</p>
+<p>Weight-loss treatment during pregnancy is not appropriate, and semaglutide may pose risks to a developing baby.</p>
+<p>If you are pregnant, planning a pregnancy or breastfeeding, discuss this with your healthcare professional.</p>
+<p>If you could become pregnant, your prescriber can advise you about contraception and when semaglutide should be stopped before trying to conceive.</p>
+<h2 id="semaglutide-weight-loss--what-happens-if-i-stop-taking-it">What happens if I stop taking it?</h2>
+<p>Some people regain weight after stopping weight-management medicines.</p>
+<p>Obesity is increasingly understood as a long-term condition influenced by biology, environment, behaviour and social factors rather than simply willpower.</p>
+<p>This means maintaining weight loss may require ongoing support.</p>
+<p>Before starting treatment, it can be helpful to discuss:</p>
+<ul>
+<li>
+<p>how long treatment may continue</p>
+</li>
+<li>
+<p>what happens if treatment is stopped</p>
+</li>
+<li>
+<p>what lifestyle and behavioural support is available</p>
+</li>
+<li>
+<p>how your progress will be reviewed</p>
+</li>
+</ul>
+<h2 id="semaglutide-weight-loss--does-semaglutide-have-benefits-beyond-weight-loss">Does semaglutide have benefits beyond weight loss?</h2>
+<p>Research into GLP-1 medicines has increasingly looked at outcomes beyond body weight.</p>
+<p>For some people with established cardiovascular disease who are overweight or living with obesity, evidence has shown that semaglutide can reduce the risk of major cardiovascular events.</p>
+<p>In 2026, NICE published specific guidance on semaglutide for reducing major adverse cardiovascular events in certain adults with established cardiovascular disease and overweight or obesity.</p>
+<p>This does not mean semaglutide prevents heart attacks or strokes in everyone who takes it.</p>
+<p>The benefit depends on the population being treated, and decisions about prescribing should be individualised.</p>
+<h2 id="semaglutide-weight-loss--what-should-i-ask-before-starting-treatment">What should I ask before starting treatment?</h2>
+<ul>
+<li>
+<p>Why are you recommending this medicine for me?</p>
+</li>
+<li>
+<p>What benefit could I realistically expect?</p>
+</li>
+<li>
+<p>What side effects should I look out for?</p>
+</li>
+<li>
+<p>How will my treatment be monitored?</p>
+</li>
+<li>
+<p>What happens if I do not lose enough weight?</p>
+</li>
+<li>
+<p>How long might I need treatment?</p>
+</li>
+<li>
+<p>What support will I receive with diet and physical activity?</p>
+</li>
+<li>
+<p>Does semaglutide interact with any of my other medicines?</p>
+</li>
+</ul>
+<h2 id="semaglutide-weight-loss--buying-weight-loss-injections-online">Buying weight-loss injections online</h2>
+<p>Only use prescription medicines supplied through legitimate, regulated healthcare services.</p>
+<p>Medicines advertised through social media, unregulated websites or unofficial sellers may be counterfeit, contaminated, incorrectly dosed or contain something different from what is advertised.</p>
+<p>You should have an appropriate clinical assessment before being prescribed semaglutide.</p>
+<div class="keypoints"><h2 id="semaglutide-weight-loss--key-points">Key points</h2>
+<ul>
+<li>
+<p>Semaglutide is a prescription medicine that can help eligible people manage their weight.</p>
+</li>
+<li>
+<p>Wegovy and Ozempic contain semaglutide but are licensed for different purposes.</p>
+</li>
+<li>
+<p>Semaglutide works partly by reducing appetite and increasing feelings of fullness.</p>
+</li>
+<li>
+<p>It should be used as part of a wider weight-management approach rather than as a replacement for nutrition, activity and behavioural support.</p>
+</li>
+<li>
+<p>Results and side effects vary between people, so treatment needs appropriate clinical assessment and follow-up.</p>
+</li>
+</ul>
+</div><div class="sources"><h2 id="semaglutide-weight-loss--sources">Sources</h2>
+<p><a rel="noopener" href="https://www.nhs.uk/medicines/semaglutide/"><u>NHS – Semaglutide: a medicine to manage type 2 diabetes or treat obesity</u></a></p>
+<p><a rel="noopener" href="https://www.england.nhs.uk/ourwork/prevention/obesity/"><u>NHS England – Weight management medicines</u></a></p>
+<p><a rel="noopener" href="https://www.nice.org.uk/guidance/ng246"><u>NICE – Overweight and obesity management (NG246)</u></a></p>
+<p><a rel="noopener" href="https://www.nice.org.uk/guidance/ta1152"><u>NICE – Semaglutide for reducing the risk of major adverse cardiovascular events (TA1152)</u></a></p>
+<p>Last reviewed: October 2026</p>
+<p><strong>Medical information notice:</strong> This article provides general health information and does not replace individual medical advice or prescribing decisions.</p></div>
+<nav class="pager" aria-label="More samples"><a href="#how-much-exercise">&larr; How much exercise?</a><a href="#samples">All samples &rarr;</a></nav>
+  </article>
+</div>
+
+</section>
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p>Independent writing samples by Dr Pulkit Mandal. Not commissioned by, or affiliated with, any organisation. The articles give general information only and are not medical advice.</p>
+</div></footer>
+</body></html>
